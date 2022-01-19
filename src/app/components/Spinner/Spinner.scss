@@ -1,0 +1,50 @@
+.spinner-wrap {
+  padding: 20px;
+  background: #fff;
+  border-radius: 50%;
+  animation: spinner-grow 0.2s ease-out;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #0871de;
+  border-right-color: transparent;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner-grow {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes spinner-shrink {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.5);
+  }
+}
+
+.backdrop.leaving {
+  .spinner-wrap {
+    transform: scale(0.5);
+    animation: spinner-shrink 0.2s ease-out;
+  }
+}

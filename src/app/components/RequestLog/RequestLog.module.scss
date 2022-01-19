@@ -1,0 +1,111 @@
+@import '../../styles/colors.scss';
+
+.table {
+  font-size: 12px;
+  width: 100%;
+
+  :global(.row) {
+    position: relative;
+
+    &:first-child {
+      font-weight: bold;
+      color: $color-yellow;
+
+      .url {
+        height: auto;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, rgba(42, 46, 62, 1) 0%, rgba(55, 61, 79, 1) 50%, rgba(42, 46, 62, 1) 100%);
+      }
+    }
+  }
+}
+
+.item {
+  font-family: 'Roboto Mono', monospace;
+  border-width: 0 1px 0 1px;
+  border-style: solid;
+  border-color: transparent;
+  height: 40px;
+  align-items: center;
+  border-style: solid;
+  border-width: 1px 0;
+  transition: 150ms;
+
+  &:nth-child(2n + 1) {
+    background-color: transparentize($color-menu, 0.8);
+  }
+
+  &:hover:not(.stubbed) {
+    cursor: pointer;
+    border-color: $color-blue;
+  }
+}
+
+.method {
+  width: 70px !important;
+}
+
+.url {
+  position: relative;
+  height: 40px;
+
+  & > div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  :global(.bold) {
+    color: $color-yellow;
+  }
+}
+
+.status {
+  width: 65px !important;
+  text-align: right;
+
+  .success {
+    color: $color-green;
+  }
+  .redirect {
+    color: $color-yellow;
+  }
+  .error {
+    color: $color-red;
+  }
+  .pending {
+    color: #aaa;
+  }
+}
+
+.stubIcon {
+  height: 14px;
+  width: 14px;
+  background-image: url(../../images/stub.svg);
+  background-position: center;
+  background-size: 14px 14px;
+  margin-right: 5px;
+  display: inline-block;
+  position: relative;
+  top: 2px;
+}
+
+.searchIcon {
+  height: 14px;
+  width: 14px;
+  background-image: url(../../images/search.svg);
+}

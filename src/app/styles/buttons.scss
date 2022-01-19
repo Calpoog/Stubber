@@ -1,0 +1,25 @@
+.button {
+  appearance: none;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 15px;
+  border: 0;
+  border-radius: 3px;
+  margin-right: 10px;
+  cursor: pointer;
+  background-color: #277cca;
+  color: white;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+}
+
+.button.green {
+  background-color: #11c453;
+}

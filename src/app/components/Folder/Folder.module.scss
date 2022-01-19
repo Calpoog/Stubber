@@ -1,0 +1,127 @@
+@import '../../styles/colors.scss';
+
+.folder {
+  &.open {
+    .wrapper:before {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &.initiallyOpen {
+    .stubs {
+      overflow: visible;
+      height: auto;
+    }
+  }
+
+  &.disabled {
+    .name {
+      opacity: 0.5;
+      text-decoration: line-through;
+    }
+  }
+}
+
+.header,
+.wrapper {
+  height: 60px;
+}
+
+.wrapper {
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  & > :global(.actions) {
+    opacity: 0;
+    position: relative;
+    right: -10px;
+  }
+
+  &:hover {
+    & > :global(.actions) {
+      opacity: 1;
+    }
+
+    &:before {
+      opacity: 1;
+    }
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    width: 13px;
+    height: 8px;
+    transform: rotate(0deg);
+    transition: transform 0.2s ease-out;
+    background-image: url(../../images/arrow.svg);
+    opacity: 0.3;
+    transition: 150ms;
+  }
+
+  &:global(.dragging) {
+    position: fixed;
+    top: 0;
+    left: 10px;
+    right: 10px;
+    z-index: 1000;
+    opacity: 0.5;
+    width: auto;
+
+    &,
+    .handle {
+      cursor: -webkit-grabbing;
+    }
+  }
+}
+.handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  cursor: grab;
+  user-select: none;
+}
+.content {
+  padding: 0 15px;
+  flex: 1;
+}
+.name {
+  font-family: 'Roboto', sans-serif;
+  color: $color-text;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 0;
+  width: auto;
+  background-color: transparent !important;
+  border-color: transparent;
+  position: relative;
+  left: -1px;
+}
+.name[disabled] {
+  cursor: pointer;
+}
+.stubs {
+  overflow: hidden;
+  height: 0;
+  transition: height 0.2s ease-out;
+
+  &:before {
+    content: '';
+    display: block;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(42, 46, 62, 1) 0%, rgba(55, 61, 79, 1) 50%, rgba(42, 46, 62, 1) 100%);
+  }
+}
+.stubsWrap {
+  padding: 10px;
+}
+.emptyMessage {
+  padding: 10px;
+  opacity: 0.6;
+}

@@ -1,0 +1,16 @@
+@import '../../styles/colors.scss';
+
+.leftPane {
+  background-color: $color-background-dark;
+  min-width: 400px !important;
+  width: 35% !important;
+}
+
+.empty {
+  height: 100%;
+  background-image: url(../../images/background-stub.svg);
+  background-size: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.1;
+}

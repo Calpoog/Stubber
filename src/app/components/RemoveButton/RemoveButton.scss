@@ -1,0 +1,20 @@
+.remove:after {
+  -webkit-mask-image: url(../../images/trash.svg);
+}
+.remove:hover:after {
+  background-color: #ea073c;
+}
+.remove:before {
+  content: '';
+  position: absolute;
+  height: 0;
+  transition: 0.15s linear;
+  background-color: #ea073c;
+  bottom: 12px;
+  width: 12px;
+  left: 14px;
+}
+.remove.holding:before {
+  height: 15px;
+  transition: 1s linear;
+}

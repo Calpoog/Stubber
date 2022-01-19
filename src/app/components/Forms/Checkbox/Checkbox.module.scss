@@ -1,0 +1,44 @@
+@import '../../../styles/colors.scss';
+
+.checkbox {
+  padding: 0 !important;
+  cursor: pointer;
+
+  .wrapper {
+    background-color: $color-input;
+    border: 1px solid $color-outline;
+    border-radius: 6px;
+    height: 30px;
+    width: 30px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    transition: 150ms;
+  }
+
+  input {
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+
+    &:checked + .wrapper {
+      background-color: $color-blue;
+      border-color: white;
+
+      svg path {
+        stroke-dashoffset: 0;
+      }
+    }
+  }
+
+  path {
+    stroke-dasharray: 15px;
+    stroke-dashoffset: 15px;
+    transition: 200ms;
+  }
+
+  &:hover .check:before {
+    border-color: #bbd0e0 #bbd0e0;
+  }
+}

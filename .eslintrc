@@ -1,0 +1,52 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "jest": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "prettier"
+    ],
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "react-hooks"
+    ],
+    "rules": {
+        "react/jsx-uses-vars": [2],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "react/react-in-jsx-scope": "off",
+        "indent": [0],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single",
+            { "avoidEscape": true }
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "no-fallthrough": 0,
+        "no-console": 0,
+        "no-process-env": 0
+    },
+    "globals": {
+        "chrome": false,
+        "require": false,
+        "global": false
+    }
+}

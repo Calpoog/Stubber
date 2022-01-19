@@ -1,0 +1,74 @@
+@import '../../../styles/colors.scss';
+
+.textbox {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  background-color: $color-input;
+  border-radius: 8px;
+
+  &.hasError {
+    input {
+      border-color: $color-red !important;
+
+      &:focus {
+        box-shadow: 2px 4px 10px 0 transparentize($color-red, 0.9);
+      }
+    }
+  }
+
+  &.hasIcon input {
+    padding-right: 45px;
+  }
+
+  input,
+  textarea {
+    font-family: 'Roboto', sans-serif;
+    height: 50px;
+    padding: 0 15px;
+    border: 1px solid $color-outline;
+    border-radius: 8px;
+    background-color: transparent;
+    color: white;
+    width: 100%;
+    transition: 150ms;
+
+    &:focus {
+      border-color: $color-blue;
+      outline: none;
+      box-shadow: 2px 4px 10px 0 transparentize($color-blue, 0.9);
+      text-decoration: none !important;
+    }
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  textarea {
+    word-break: break-word;
+    white-space: pre;
+    min-height: 150px;
+    padding: 15px;
+    resize: vertical;
+  }
+}
+
+.icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.error {
+  font-size: 12px;
+  color: $color-red;
+  padding-top: 5px;
+}
