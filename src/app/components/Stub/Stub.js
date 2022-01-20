@@ -52,14 +52,13 @@ const Stub = ({ id }) => {
   });
 
   useEffect(() => {
-    // clear alert on location change
     const unlisten = history.listen((location) => {
       const match = location.pathname.match(/\/stub\/([a-z0-9-]+)/);
-      console.log('location', name, selected, match && match[1] === id);
-      if (selected !== (match && match[1] === id)) setSelected(!selected);
+      if (!match) {
+        setSelected(false);
+      } else if (selected !== (match[1] === id)) setSelected(!selected);
     });
 
-    // stop the listener when component unmounts
     return unlisten;
   });
 
